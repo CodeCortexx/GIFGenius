@@ -1,41 +1,51 @@
-// Beispiel-GIFs für das Grid
-const gifs = [
-    "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
-    "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
-    "https://media.giphy.com/media/xUPGcm7GvmQzVyHq9a/giphy.gif",
-    "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif"
-];
-
-// Lade die GIFs in das Grid
+const apiKey = "CS1vvM7s0q1jXLvxUKXN0lFA7aoLQU38"; // Ersetze mit deinem Giphy API-Schlüssel
 const gifGrid = document.getElementById("gifGrid");
+const searchBar = document.getElementById("searchBar");
 
-function loadGifs() {
+// Funktion: Trend-GIFs laden
+async function fetchTrendingGIFs() {
+    const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=20`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayGIFs(data.data);
+    } catch (error) {
+        console.error("Fehler beim Abrufen von Trending-GIFs:", error);
+    }
+}
+
+// Funktion: GIFs suchen
+async function searchGIFs(query) {
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=20`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayGIFs(data.data);
+    } catch (error) {
+        console.error("Fehler beim Suchen von GIFs:", error);
+    }
+}
+
+// Funktion: GIFs anzeigen
+function displayGIFs(gifs) {
+    gifGrid.innerHTML = ""; // Aktuelles Grid leeren
     gifs.forEach((gif) => {
         const gifItem = document.createElement("div");
         gifItem.classList.add("grid-item");
-        gifItem.innerHTML = `<img src="${gif}" alt="GIF">`;
+        gifItem.innerHTML = `<img src="${gif.images.fixed_height.url}" alt="GIF">`;
         gifGrid.appendChild(gifItem);
     });
 }
 
-// Füge GIFs bei Seitenaufruf hinzu
-loadGifs();
-
-// Suchfunktion für GIFs
-const searchBar = document.getElementById("searchBar");
+// Event Listener für die Suchleiste
 searchBar.addEventListener("input", (e) => {
-    const searchValue = e.target.value.toLowerCase();
-    const filteredGifs = gifs.filter((gif) => gif.includes(searchValue));
-    gifGrid.innerHTML = "";
-    filteredGifs.forEach((gif) => {
-        const gifItem = document.createElement("div");
-        gifItem.classList.add("grid-item");
-        gifItem.innerHTML = `<img src="${gif}" alt="GIF">`;
-        gifGrid.appendChild(gifItem);
-    });
+    const query = e.target.value.trim();
+    if (query.length > 0) {
+        searchGIFs(query);
+    } else {
+        fetchTrendingGIFs();
+    }
 });
 
-// Button zur GIF-Erstellung
-document.getElementById("createGif").addEventListener("click", () => {
-    alert("GIF-Erstellung ist noch nicht implementiert.");
-});
+// App starten
+fetchTrendingGIFs();
