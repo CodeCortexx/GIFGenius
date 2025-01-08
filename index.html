@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFGenius - Meme & GIF Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GIFGenius</h1>
+        <p>Create Memes and GIFs like a genius!</p>
+    </header>
 
+    <main>
+        <div class="upload-section">
+            <label for="uploadImage">Upload your image or GIF:</label>
+            <input type="file" id="uploadImage" accept="image/*, video/*" onchange="loadImage(event)">
+        </div>
+
+        <div class="editor">
+            <canvas id="canvas" width="600" height="400"></canvas>
+            <div class="controls">
+                <button onclick="addText()">Add Text</button>
+                <button onclick="download()">Download Meme/GIF</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GIFGenius. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
