@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIFGenius - Meme und GIF-Generator</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Verweis auf die angepasste CSS-Datei -->
+    <title>GIFGenius</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>GIFGenius</h1>
-            <p>Erstelle deine eigenen GIFs und Memes!</p>
-        </header>
-        
-        <main>
-            <div class="upload-section">
-                <label for="fileUpload">Wähle ein Bild aus</label>
-                <input type="file" id="fileUpload" accept="image/*">
-            </div>
-            
-            <div class="editor">
-                <canvas id="canvas" width="400" height="400"></canvas>
-            </div>
-            
-            <div class="controls">
-                <button id="addText">Text Hinzufügen</button>
-                <button id="saveGif">Speichern</button>
-            </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 GIFGenius | <a href="#">Impressum</a></p>
-        </footer>
+    <div class="header">
+        <h1>GIFGenius</h1>
+        <p>Erstelle und entdecke GIFs und Memes!</p>
+        <input type="text" id="searchBar" placeholder="Search for GIFs or Memes...">
     </div>
 
-    <script src="js/spinwheel.js"></script>  <!-- Verweis auf die JavaScript-Datei -->
-    <script src="index.js"></script>         <!-- Verweis auf die spezifische JavaScript-Logik -->
+    <div class="grid-container" id="gifGrid">
+        <!-- Dynamisch generierte GIFs werden hier angezeigt -->
+    </div>
+
+    <div class="footer">
+        <button id="createGif">Create Your Own GIF</button>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
