@@ -1,4 +1,4 @@
-/* Allgemeines Styling */
+/* Das Design bleibt weitgehend gleich, mit Giphy-Branding */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,6 @@ body {
     align-items: center;
 }
 
-/* Header */
 .header {
     text-align: center;
     padding: 20px;
@@ -41,7 +40,6 @@ body {
     text-align: center;
 }
 
-/* GIF Grid */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -51,7 +49,6 @@ body {
     max-width: 1200px;
 }
 
-/* GIF Cards */
 .grid-item {
     position: relative;
     background: #fff;
@@ -72,7 +69,6 @@ body {
     object-fit: cover;
 }
 
-/* Footer */
 .footer {
     background: rgba(0, 0, 0, 0.7);
     padding: 15px;
@@ -82,17 +78,8 @@ body {
     bottom: 0;
 }
 
-.footer button {
-    background-color: #ff76b1;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.footer button:hover {
-    background-color: #ff4f8b;
+.footer p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0;
 }
