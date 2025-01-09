@@ -1,19 +1,25 @@
+/* Allgemeines Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Blau wie vorher */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Blauer Hintergrund */
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
+/* Header */
 .app-header {
     text-align: center;
-    padding: 20px;
-    background: transparent;
+    margin: 20px 0;
 }
 
 .app-header h1 {
     font-size: 36px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .app-header p {
@@ -22,53 +28,69 @@ body {
 }
 
 .app-header input {
-    width: 80%;
-    padding: 10px;
+    width: 90%;
+    max-width: 500px;
+    padding: 12px 15px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    outline: none;
+    margin-bottom: 20px;
 }
 
+/* Kategorien */
 .categories {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .categories button {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background 0.3s;
+    font-size: 14px;
 }
 
-.categories button.active,
-.categories button:hover {
-    background: rgba(255, 255, 255, 0.4);
+.categories button:hover,
+.categories button.active {
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
 }
 
+/* GIF Grid */
 .gif-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    gap: 15px;
+    width: 90%;
+    max-width: 1000px;
+    margin-bottom: 50px;
 }
 
 .gif-grid img {
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
+.gif-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
 .footer {
     text-align: center;
+    font-size: 14px;
+    margin-top: auto;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
     width: 100%;
-    bottom: 0;
-    left: 0;
+    color: white;
 }
