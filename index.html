@@ -10,13 +10,14 @@
     <div class="app">
         <!-- Header -->
         <header class="app-header">
-            <input type="text" placeholder="Search GIPHY" id="searchInput">
-            <button id="searchButton">🔍</button>
+            <h1>GIFGenius</h1>
+            <p>Entdecke Tausende von GIFs und Memes direkt aus Giphy!</p>
+            <input type="text" placeholder="Search for GIFs or Memes..." id="searchInput">
         </header>
 
-        <!-- Navigation Tabs -->
-        <nav class="tabs">
-            <button data-category="trending">Trending</button>
+        <!-- Kategorien-Buttons -->
+        <nav class="categories">
+            <button data-category="trending" class="active">Trending</button>
             <button data-category="stickers">Stickers</button>
             <button data-category="emoji">Emoji</button>
             <button data-category="reactions">Reactions</button>
@@ -24,14 +25,12 @@
 
         <!-- GIF Container -->
         <div id="gifContainer" class="gif-grid">
-            <!-- Dynamically loaded GIFs will appear here -->
+            <!-- GIFs werden hier geladen -->
         </div>
 
-        <!-- Footer Navigation -->
+        <!-- Footer -->
         <footer class="footer">
-            <button id="createButton">➕</button>
-            <button id="searchTabButton">🔍</button>
-            <button id="profileButton">👤</button>
+            <p>Powered by Giphy</p>
         </footer>
     </div>
 
