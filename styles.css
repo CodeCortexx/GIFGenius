@@ -1,85 +1,70 @@
-/* Das Design bleibt weitgehend gleich, mit Giphy-Branding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #00d2ff, #3a7bd5);
-    color: white;
-    min-height: 100vh;
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.app-header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    width: 100%;
-}
-
-.header h1 {
-    font-size: 2rem;
-}
-
-.header p {
-    font-size: 1rem;
-}
-
-.header input {
-    margin-top: 10px;
     padding: 10px;
-    width: 80%;
-    max-width: 400px;
-    border: none;
-    border-radius: 20px;
-    text-align: center;
+    background: #111;
+    border-bottom: 2px solid #444;
 }
 
-.grid-container {
+.app-header input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.app-header button {
+    margin-left: 5px;
+    padding: 8px;
+    background: #555;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #222;
+    border-bottom: 2px solid #444;
+}
+
+.tabs button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gif-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
-    padding: 20px;
+    padding: 10px;
+}
+
+.gif-grid img {
     width: 100%;
-    max-width: 1200px;
-}
-
-.grid-item {
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.grid-item:hover {
-    transform: scale(1.05);
-}
-
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    border-radius: 5px;
 }
 
 .footer {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    width: 100%;
-    text-align: center;
     position: fixed;
     bottom: 0;
-}
-
-.footer p {
-    color: #fff;
-    font-size: 0.9rem;
-    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #111;
+    border-top: 2px solid #444;
 }
