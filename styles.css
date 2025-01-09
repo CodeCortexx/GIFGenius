@@ -1,20 +1,15 @@
-/* Allgemeines Styling */
+/* Hintergrund */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Blauer Hintergrund */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
+    text-align: center;
 }
 
 /* Header */
 .app-header {
-    text-align: center;
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
 .app-header h1 {
@@ -28,9 +23,9 @@ body {
 }
 
 .app-header input {
-    width: 90%;
+    width: 80%;
     max-width: 500px;
-    padding: 12px 15px;
+    padding: 10px 15px;
     font-size: 16px;
     border: none;
     border-radius: 25px;
@@ -70,7 +65,7 @@ body {
     gap: 15px;
     width: 90%;
     max-width: 1000px;
-    margin-bottom: 50px;
+    margin: 0 auto 50px;
 }
 
 .gif-grid img {
@@ -86,11 +81,9 @@ body {
 
 /* Footer */
 .footer {
-    text-align: center;
     font-size: 14px;
-    margin-top: auto;
+    margin-top: 20px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.3);
-    width: 100%;
     color: white;
 }
