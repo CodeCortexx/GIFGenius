@@ -5,7 +5,7 @@ const categoryButtons = document.querySelectorAll('.categories button');
 
 // Funktion: GIFs laden
 async function fetchGIFs(category = 'trending', query = '') {
-    gifContainer.innerHTML = '<p>Loading...</p>';
+    gifContainer.innerHTML = '<p style="color:white;text-align:center;">Loading...</p>';
     const url = query
         ? `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=20`
         : `https://api.giphy.com/v1/gifs/${category}?api_key=${API_KEY}&limit=20`;
@@ -17,7 +17,7 @@ async function fetchGIFs(category = 'trending', query = '') {
             .map(gif => `<img src="${gif.images.fixed_height.url}" alt="${gif.title}">`)
             .join('');
     } catch (error) {
-        gifContainer.innerHTML = '<p>Failed to load GIFs.</p>';
+        gifContainer.innerHTML = '<p style="color:white;text-align:center;">Failed to load GIFs.</p>';
         console.error(error);
     }
 }
